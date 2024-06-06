@@ -1,0 +1,52 @@
+def lista_al_cuadrado():
+    n = int(input("Ingrese la cantidad de números en la lista: "))
+    numeros = []
+
+    for i in range(n):
+        num = float(input(f"Ingrese el número {i + 1}: "))
+        numeros.append(num)
+
+    cuadrados = [x ** 2 for x in numeros]
+
+    print("Los números al cuadrado son:")
+    for i, cuadrado in enumerate(cuadrados):
+        print(f"Número {i + 1}: {cuadrado}")
+
+
+lista_al_cuadrado()
+
+def costo_total_plato():
+    cantidad_productos = int(input("Ingrese la cantidad de productos: "))
+    productos = []
+
+    for i in range(cantidad_productos):
+        nombre = input(f"Ingrese el nombre del producto {i+1}: ")
+        precio = float(input(f"Ingrese el precio del producto {nombre}: "))
+        productos.append((nombre, precio))
+
+    total = sum([precio for nombre, precio in productos])
+
+    print("Productos y precios:")
+    for nombre, precio in productos:
+        print(f"{nombre}: ${precio:.2f}")
+
+    print(f"El costo total a gastar es: ${total:.2f}")
+
+costo_total_plato()
+def buscar_elemento():
+    n = int(input("Ingrese la cantidad de elementos en la lista: "))
+    lista = []
+
+    for i in range(n):
+        elemento = input(f"Ingrese el elemento {i+1}: ")
+        lista.append(elemento)
+
+    elemento_buscar = input("Ingrese el elemento a buscar: ")
+    posiciones = [i for i, x in enumerate(lista) if x == elemento_buscar]
+
+    if posiciones:
+        print(f"El elemento '{elemento_buscar}' se encuentra en las posiciones: {posiciones}")
+    else:
+        print(f"El elemento '{elemento_buscar}' no se encuentra en la lista.")
+
+buscar_elemento()
